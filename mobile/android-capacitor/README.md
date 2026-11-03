@@ -78,4 +78,3 @@ and validate gesture/layout support on mobile.
 The parent project and this fork are licensed under AGPL-3.0-only. Follow
 the project's `CONTRIBUTING.md`, `CLA.md`, and `TRADEMARKS.md` before
 proposing an upstream pull request.
-

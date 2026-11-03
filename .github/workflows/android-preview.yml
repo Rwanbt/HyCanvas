@@ -30,19 +30,20 @@ jobs:
         with:
           distribution: temurin
           java-version: "21"
-      - uses: android-actions/setup-android@v3
       - name: Install Android SDK components
-        run: sdkmanager "platforms;android-36" "build-tools;35.0.0"
+        run: |
+          SDKMANAGER="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager -print -quit)"
+          test -n "$SDKMANAGER"
+          "$SDKMANAGER" --install "platforms;android-36" "build-tools;35.0.0"
       - name: Install Capacitor
         run: npm ci
       - name: Sync native assets
         run: npm run android:sync
       - name: Build debug APK
-        run: cd android && ./gradlew --no-daemon --max-workers=2 assembleDebug
+        run: cd android && bash ./gradlew --no-daemon --max-workers=2 assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: hycanvas-android-preview-debug
           path: mobile/android-capacitor/android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 14
-
