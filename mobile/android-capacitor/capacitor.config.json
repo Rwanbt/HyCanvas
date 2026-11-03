@@ -1,0 +1,13 @@
+{
+  "appId": "com.rwanbt.hycanvas.preview",
+  "appName": "HyCanvas Preview",
+  "webDir": "www",
+  "server": {
+    "url": "https://hycanvas.art",
+    "cleartext": false,
+    "allowNavigation": ["hycanvas.art"]
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}
