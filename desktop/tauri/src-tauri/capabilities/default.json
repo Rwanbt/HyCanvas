@@ -1,0 +1,9 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "No frontend-to-native capabilities are exposed in the preview",
+  "windows": [
+    "main"
+  ],
+  "permissions": []
+}
